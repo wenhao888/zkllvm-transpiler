@@ -346,6 +346,7 @@ namespace nil {
 
                 // Find out rotation_idx
                 std::cout << "wlin: before std::distance" << std::endl;
+                std::cout << "wlin: columns_rotations.size()=" << columns_rotations.size() << std::endl;
                 std::size_t rotation_idx = std::distance(
                     columns_rotations.at(global_index).begin(),
                     columns_rotations.at(global_index).find(var.rotation)
