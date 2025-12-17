@@ -438,7 +438,11 @@ namespace nil {
 
                 // Convert constraint expression to non_linear_combination.
                 crypto3::math::expression_to_non_linear_combination_visitor<variable_type> visitor;
+
+                std:cout<< "before visitor.convert" << std::endl;
                 auto comb = visitor.convert(constraint);
+
+                std:cout<< "before generate_terms" << std::endl;
                 res << generate_terms(profiling_params, comb.terms, columns_rotations);
                 return res.str();
             }
