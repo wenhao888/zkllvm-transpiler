@@ -583,12 +583,15 @@ namespace nil {
                 ArithmetizationType &bp
             ) {
                 std::stringstream gates_execution_str;
+                std::cout << "wlin: inside print_single_sol_file" << std::endl;
+
                 for(std::size_t i = 0; i < bp.gates().size(); i++){
                     gates_execution_str << generate_gate_assembly_code(
                         profiling_params, i, bp.gates()[i], columns_rotations
                     );
                     gates_execution_str << std::endl;
                 }
+                std::cout << "wlin: after the loop of bp.gates" << std::endl;
 
                 std::string result = single_file_template;
                 boost::replace_all(result, "$TEST_ID$", id);
@@ -660,6 +663,7 @@ namespace nil {
 
                     std::ofstream gate_argument_out;
                     gate_argument_out.open(out_folder_path + "/gate_argument.sol");
+
                     print_single_sol_file(
                         gate_argument_out,
                         id,
