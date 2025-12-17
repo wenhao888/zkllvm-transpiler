@@ -584,6 +584,7 @@ namespace nil {
             ) {
                 std::stringstream gates_execution_str;
                 std::cout << "wlin: inside print_single_sol_file" << std::endl;
+                std::cout << bp.gates().size() << std::endl;
 
                 for(std::size_t i = 0; i < bp.gates().size(); i++){
                     gates_execution_str << generate_gate_assembly_code(
