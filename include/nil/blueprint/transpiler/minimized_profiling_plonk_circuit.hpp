@@ -498,13 +498,19 @@ namespace nil {
                 columns_rotations_type &columns_rotations
             ) {
                 std::cout << "wlin: inside generate_gate_assembly_code" << std::endl;
+                std::cout << gate.constraints.size() << std::endl;
 
                 std::stringstream res;
                 res << "\t\t\t//Gate" << gate_ind << std::endl;
                 res << "\t\t\tmstore(add(local_vars, GATE_EVAL_OFFSET), 0)" << std::endl;
                 for (auto &constraint : gate.constraints) {
+                    std::cout << "wlin: before generate_constraint " << std::endl;
                     res << generate_constraint(profiling_params, constraint, columns_rotations);
+
+					std::cout << "wlin: before generate_gate_evaluation " << std::endl;
                     res << generate_gate_evaluation();
+
+                    std::cout << "wlin: before generate_theta_acc " << std::endl;
                     res << generate_theta_acc();
                 }
                 res << generate_selector(gate);
