@@ -656,6 +656,7 @@ namespace nil {
                     json_out.open(out_folder_path + "/linked_libs_list.json");
                     print_linked_libraries_list(json_out,id, profiling_params);
                     json_out.close();
+					std::cout << "wlin: write to linked_libs_list" << std::endl;
 
                     std::ofstream gate_argument_out;
                     gate_argument_out.open(out_folder_path + "/gate_argument.sol");
@@ -667,6 +668,7 @@ namespace nil {
                         single_sol_file_template,
                         bp
                     );
+					std::cout << "wlin: write to gate_argument.sol" << std::endl;
                     gate_argument_out.close();
                 }else{
                    std::cout << "wlin: inside branch2" << std::endl;
