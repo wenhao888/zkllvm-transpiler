@@ -497,6 +497,8 @@ namespace nil {
                 int gate_ind, const GateType &gate,
                 columns_rotations_type &columns_rotations
             ) {
+                std::cout << "wlin: inside generate_gate_assembly_code" << std::endl;
+
                 std::stringstream res;
                 res << "\t\t\t//Gate" << gate_ind << std::endl;
                 res << "\t\t\tmstore(add(local_vars, GATE_EVAL_OFFSET), 0)" << std::endl;
@@ -584,9 +586,9 @@ namespace nil {
             ) {
                 std::stringstream gates_execution_str;
                 std::cout << "wlin: inside print_single_sol_file" << std::endl;
-                std::cout << bp.gates().size() << std::endl;
 
                 for(std::size_t i = 0; i < bp.gates().size(); i++){
+                    std::cout << "wlin: i = " << i << std::endl;
                     gates_execution_str << generate_gate_assembly_code(
                         profiling_params, i, bp.gates()[i], columns_rotations
                     );
