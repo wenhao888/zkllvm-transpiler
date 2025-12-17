@@ -385,6 +385,7 @@ namespace nil {
             ) {
                 std::stringstream res;
                 bool first = true;
+                std::cout << "wlin: inside generate_term" << std::endl;
 
                 for( auto it = std::cbegin(vars); it != std::end(vars); it++){
                     if( first ){
@@ -395,6 +396,7 @@ namespace nil {
                         }
                     }
                     res << "\t\t\tterms:=mulmod(terms, ";
+                    std::cout << "wlin: before generate_variable" << std::endl;
                     res << generate_variable(profiling_params, *it, columns_rotations);
                     res << ", modulus)" << std::endl;
                 }
