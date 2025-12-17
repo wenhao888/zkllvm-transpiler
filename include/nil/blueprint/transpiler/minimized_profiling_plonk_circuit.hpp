@@ -642,6 +642,7 @@ namespace nil {
                 std::string out_folder_path = ".",
                 bool optimize_gates = false
             ) {
+				std::cout << "wlin: inside process_split" << std::endl;
                 auto id = out_folder_path.substr(out_folder_path.rfind("/") + 1);
 
                 profiling_params_type profiling_params(bp, optimize_gates);
