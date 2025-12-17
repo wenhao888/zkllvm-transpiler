@@ -320,6 +320,7 @@ namespace nil {
             ) {
                 using variable_type = nil::crypto3::zk::snark::plonk_variable<typename FieldType::value_type>;
 
+				std::cout << "wlin: inside generate_variable" << std::endl;
                 std::stringstream res;
                 std::size_t index = var.index;
                 std::size_t global_index;
@@ -344,11 +345,12 @@ namespace nil {
                 }
 
                 // Find out rotation_idx
+                std::cout << "wlin: before std::distance" << std::endl;
                 std::size_t rotation_idx = std::distance(
                     columns_rotations.at(global_index).begin(),
                     columns_rotations.at(global_index).find(var.rotation)
                     );
-
+				std::cout << "wlin: after std::distance" << std::endl;
                 if (var.type == variable_type::witness) {
                     if( profiling_params.rotated_witness )
                         res << get_rotated_witness_call << "("<< index << "," << rotation_idx << ", local_vars)";
