@@ -644,8 +644,11 @@ namespace nil {
             ) {
 				std::cout << "wlin: inside process_split" << std::endl;
                 auto id = out_folder_path.substr(out_folder_path.rfind("/") + 1);
+				std::cout << "wlin: after substr" << std::endl;
 
                 profiling_params_type profiling_params(bp, optimize_gates);
+                std::cout << "wlin: after profiling_params" << std::endl;
+
 
                 if( profiling_params.optimize_gates && profiling_params.one_file_gates ){
                     std::cout << "wlin: inside branch1" << std::endl;
