@@ -411,7 +411,7 @@ namespace nil {
                 for( auto it = std::cbegin(terms); it != std::cend(terms); it++ ){
                     std::cout << "wlin: inside generate_terms" << std::endl;
 
-                    if(it->get_coeff().is_one())
+                    if(it->get_coeff().is_one()) {
                         std::cout << "wlin: coeff_one" << std::endl;
                         std::cout << "wlin: before generate_term " << it->get_coeff().data << std::endl;
 						res << generate_term(profiling_params, it->get_vars(), columns_rotations, true);
