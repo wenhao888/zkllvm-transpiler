@@ -648,7 +648,8 @@ namespace nil {
                 profiling_params_type profiling_params(bp, optimize_gates);
 
                 if( profiling_params.optimize_gates && profiling_params.one_file_gates ){
-                    std::ofstream json_out;
+                    std::cout << "wlin: inside branch1" << std::endl;
+					std::ofstream json_out;
                     json_out.open(out_folder_path + "/linked_libs_list.json");
                     print_linked_libraries_list(json_out,id, profiling_params);
                     json_out.close();
@@ -665,6 +666,7 @@ namespace nil {
                     );
                     gate_argument_out.close();
                 }else{
+                   std::cout << "wlin: inside branch2" << std::endl;
                     std::ofstream json_out;
                     json_out.open(out_folder_path + "/linked_libs_list.json");
                     print_linked_libraries_list(json_out, id, profiling_params);
